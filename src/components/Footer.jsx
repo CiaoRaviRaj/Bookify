@@ -1,7 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 
 function Footer() {
+  const router = useRouter
   return (
     <div className="static bottom-0 w-full overflow-hidden">
       <div className="bg-amazon_blue-light md:px-5 lg:px-10">
@@ -49,23 +51,27 @@ function Footer() {
           </div>
         </div>
       </div>
-      <div className="flex flex-grow justify-evenly border-t border-gray-600 bg-amazon_blue pt-4 font-semibold text-white">
-        <Link href="/">
-          <Image
-            src="/amazon.png"
-            alt="Amazon"
-            width={140}
-            height={30}
-            objectFit="contain"
-            className="cursor-pointer"
-          />
-        </Link>
-        <h1 className="-mt-1 text-xl md:text-2xl">© Divyam Agarwal</h1>
+      <div
+        onClick={() => router.push('/')}
+        className="flex flex-grow justify-evenly border-t border-gray-600 bg-amazon_blue pt-4 font-semibold text-white"
+      >
+        <Image
+          src="/amazon.png"
+          alt="Amazon"
+          width={140}
+          height={30}
+          objectFit="contain"
+          className="cursor-pointer"
+        />
+
+        <h1 className="-mt-1 text-xl md:text-2xl">© CiaoRaviRaj</h1>
       </div>
+      {/*
       <p className="flex flex-grow justify-evenly border-t border-gray-600 bg-amazon_blue p-2 text-center font-semibold text-white">
         Note : This has been made only for educational purposes. No copyright
         intended.
-      </p>
+      </p> 
+      */}
     </div>
   )
 }

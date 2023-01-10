@@ -1,11 +1,13 @@
-/** @type {import('next').NextConfig} */
+// /** @type {import('next').NextConfig} */
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ['fakestoreapi.com'],
+    domains: ['links.papareact.com', 'fakestoreapi.com'],
   },
   env: {
-    stipe_public_key: process.env.STRIPE_PUBLIC_KEY
+    google_id: process.env.GOOGLE_ID,
+    google_secret: process.env.GOOGLE_SECRET,
+    stipe_public_key: process.env.STRIPE_PUBLIC_KEY,
+    stipe_secret_key: process.env.STRIPE_SECRET_KEY,
   },
 }
-

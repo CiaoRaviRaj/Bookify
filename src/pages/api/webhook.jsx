@@ -25,6 +25,7 @@ const fulfillOrder = async (session) => {
     JSON.stringify(image)
   )
 
+  // setting up firebase data
   const ref = doc(db, 'users', session.metadata.email, 'orders', session.id)
 
   const refDoc = setDoc(ref, {
@@ -71,5 +72,6 @@ export default final
 export const config = {
   api: {
     bodyParser: false,
+    externalResolver: true,
   },
 }

@@ -9,7 +9,7 @@
   .button {
     @apply rounded-md border border-none p-3 text-lg 
         font-semibold shadow-md 
-        focus:outline-none md:text-sm;
+        focus:outline-none md:text-sm focus:ring-2 focus:ring-yellow-500 active:from-yellow-500;
   }
   .growing-hover {
     @apply origin-bottom scale-100 transform transition-transform duration-300;

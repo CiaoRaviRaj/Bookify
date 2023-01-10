@@ -1,14 +1,20 @@
 
-import { initializeApp } from "firebase/app";
+import { initializeApp } from 'firebase/app'
+import { getFirestore } from 'firebase/firestore'
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCXfd6LW3jeV-TYt34gVIV0hJJgc-OAQJo",
-  authDomain: "ecommerce-2-new.firebaseapp.com",
-  projectId: "ecommerce-2-new",
-  storageBucket: "ecommerce-2-new.appspot.com",
-  messagingSenderId: "1068665869103",
-  appId: "1:1068665869103:web:590b224ac8efb3e52e07da"
-};
+  apiKey: 'AIzaSyBgQTYz0pHCVQjozI3PV3e3YilQss-OCBQ',
+  authDomain: 'bookify-9bc4d.firebaseapp.com',
+  projectId: 'bookify-9bc4d',
+  storageBucket: 'bookify-9bc4d.appspot.com',
+  messagingSenderId: '679386773594',
+  appId: '1:679386773594:web:e1c11174debb0d3263c063',
+}
 
+// const app = !firebase.apps.length
+//   ? initializeApp(firebaseConfig)
+//   : firebase.app()
+const app = initializeApp(firebaseConfig)
+const db = getFirestore(app)
 
-const app = initializeApp(firebaseConfig);
+export default db

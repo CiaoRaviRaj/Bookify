@@ -1,5 +1,5 @@
 {
-  "name": "with-redux-toolkit",
+  "name": "bookify",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -14,12 +14,14 @@
     "@stripe/stripe-js": "^1.29.0",
     "@tailwindcss/line-clamp": "^0.4.0",
     "axios": "^0.27.2",
+    "caniuse-lite": "^1.0.30001442",
     "firebase": "^9.8.1",
     "firebase-admin": "^10.2.0",
     "heroicons-react": "^1.4.1",
     "hoist-non-react-statics": "^3.3.2",
     "lodash": "^4.17.21",
     "micro": "^9.3.4",
+    "moment": "^2.29.4",
     "next": "latest",
     "next-auth": "^4.3.4",
     "next-fonts": "^1.5.1",

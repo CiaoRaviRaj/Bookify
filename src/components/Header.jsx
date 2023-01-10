@@ -1,4 +1,5 @@
 import Image from 'next/image'
+
 import Link from 'next/link'
 import Currency from 'react-currency-formatter'
 import { useState } from 'react'
@@ -37,25 +38,19 @@ function Header({ products }) {
     <header style={{ position: 'sticky', top: 0, zIndex: 50 }}>
       {/* Top Navbar */}
       <div className="ns:py-2 flex flex-grow items-center bg-amazon_blue p-1 outline-none ">
-        {/* Right Navbar */}
-        <>
-          <div>
-            <Navbar />
-          </div>
-        </>
-
         {/* Logo */}
-        <div className=" flex-shrink-1 mt-2 flex w-28 items-center xs:w-32">
-          <Link href="/">
-            <Image
-              src="/amazon.png"
-              alt="Amazon"
-              width={150}
-              height={40}
-              objectFit="contain"
-              className="cursor-pointer"
-            />
-          </Link>
+        <div
+          onClick={() => router.push('/')}
+          className=" flex-shrink-1 mt-2 flex w-28 items-center xs:w-32"
+        >
+          <Image
+            src="/amazon.png"
+            alt="Amazon"
+            width={150}
+            height={40}
+            objectFit="contain"
+            className="cursor-pointer"
+          />
         </div>
 
         {/* Search Bar */}
@@ -95,30 +90,29 @@ function Header({ products }) {
           <div className="link hidden hover:block sm:block">
             <>
               {session ? (
-                <>
+                <div>
                   <p>Hello, {session.user.name}</p>
                   <p className="font-extrabold md:text-sm">
                     My Account & Lists
                   </p>
-                </>
+                </div>
               ) : (
-                <>
-                  <div
-                    className="-mr-2 flex items-center space-x-1 rounded-md border border-none p-1 text-center no-underline transition duration-150 ease-out hover:bg-gray-200 hover:text-amazon_blue hover:ease-in "
-                    onClick={() => signIn()}
-                  >
-                    <LoginIcon className="text-md h-8" />
-                    <a className="text-lg font-semibold no-underline">
-                      Sign In
-                    </a>
-                  </div>
-                </>
+                <div
+                  className="-mr-2 flex items-center space-x-1 rounded-md border border-none p-1 text-center no-underline transition duration-150 ease-out hover:bg-gray-200 hover:text-amazon_blue hover:ease-in "
+                  onClick={signIn}
+                >
+                  <LoginIcon className="text-md h-8" />
+                  <a className="text-lg font-semibold no-underline">Sign In</a>
+                </div>
               )}
             </>
           </div>
 
           {/* Returns & My Order*/}
-          <div className="link hidden md:block">
+          <div
+            className="link hidden md:block"
+            onClick={() => router.push('/orders')}
+          >
             <p>Returns & </p>
             <p className="font-extrabold md:text-sm">My Orders</p>
           </div>
@@ -128,7 +122,7 @@ function Header({ products }) {
             className="link relative flex items-center"
             onClick={() => router.push('/checkout')}
           >
-            <span className="absolute top-0 right-0 h-4 w-4 animate-pulse rounded-full bg-yellow-400 text-center font-black text-black md:right-10">
+            <span className="absolute top-0 right-0 h-4 w-4 animate-pulse rounded-full bg-yellow-400 text-center font-bold text-black md:right-10">
               {items.length}
             </span>
             <ShoppingCartIcon className="text-md h-10" />
@@ -141,6 +135,9 @@ function Header({ products }) {
 
       {/* Bottom Navbar */}
       <div className=" flex items-center space-x-3 bg-amazon_blue-light p-2 pl-6 text-sm text-white outline-none">
+        <div>
+          <Navbar />
+        </div>
         <p className="link">Prime Video</p>
         <p className="link">Amazon Business</p>
         <p className="link">Today&#39;s Deals</p>

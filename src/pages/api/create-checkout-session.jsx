@@ -1,6 +1,6 @@
 import { groupBy } from 'lodash'
 
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
+const stripe = require('stripe')(process.env.stipe_secret_key)
 const path = require('path')
 
 const ses = async (req, res) => {
@@ -37,24 +37,24 @@ const ses = async (req, res) => {
     },
     shipping_options: [
       {
-        shipping_rate: 'shr_1KyzlUSDO3e3ORqWiKEaKCoz',
+        shipping_rate: 'shr_1MOgTISCY43mj3PxXx0ulVME',
       },
       {
-        shipping_rate: 'shr_1KyzmISDO3e3ORqWSfxB3RtU',
+        shipping_rate: 'shr_1MOgTISCY43mj3PxXx0ulVME',
       },
     ],
     line_items: transfromedItems,
     mode: 'payment',
-    success_url: `${process.env.HOST}/success`,
-    cancel_url: `${process.env.HOST}/checkout`,
-    discounts: [
-      // {
-      //   coupon: '05rEVp32',
-      // },
-      {
-        coupon: '41fmeutJ',
-      },
-    ],
+    success_url: `http://localhost:3000/success`,
+    cancel_url: `http://localhost:3000/checkout`,
+    // discounts: [
+    //   // {
+    //   //   coupon: '05rEVp32',
+    //   // },
+    //   {
+    //     coupon: '41fmeutJ',
+    //   },
+    // ],
     metadata: {
       email,
       images: JSON.stringify(groupedImages),

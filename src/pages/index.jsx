@@ -5,8 +5,11 @@ import Banner from '../components/Banner'
 import Footer from '../components/Footer'
 import ProductFeed from '../components/ProductFeed'
 import { getSession } from 'next-auth/react'
+import { API_GET_DATA_URL } from '../constants/commonConstants'
 
 export default function Home({ products }) {
+  
+  
   return (
     <div className="bg-gray-100 font-sans">
       <Head>
@@ -23,15 +26,15 @@ export default function Home({ products }) {
   )
 }
 
+//Server side fetching api data
 export async function getServerSideProps(context) {
   const session = await getSession(context)
-  const products = await fetch('https://fakestoreapi.com/products').then(
-    (res) => res.json()
-  )
+  const products = await fetch(API_GET_DATA_URL).then((res) => res.json())
   return {
     props: {
       products,
       session,
     },
+    
   }
 }

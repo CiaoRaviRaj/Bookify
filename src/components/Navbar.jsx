@@ -21,9 +21,9 @@ function Navbar() {
     <div className="justify-start items-center">
       {/* Right Navbar */}
       <div className='h-10 flex justify-start items-center'>
-        <a className='ml-8 text-4xl bg-none'>
+        <a className='text-4xl bg-none'>
             <p
-              className="link pl-2 flex items-center text-center text-white"
+              className="link flex items-center text-center text-white"
               onClick={showSidebar}
             >
               <MenuIcon className="h-6 mr-1" />

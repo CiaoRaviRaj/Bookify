@@ -6,10 +6,11 @@ import Footer from '../components/Footer'
 import ProductFeed from '../components/ProductFeed'
 import { getSession } from 'next-auth/react'
 import { API_GET_DATA_URL } from '../constants/commonConstants'
+import { books_data } from '../BooksData'
 
-export default function Home({ products }) {
-  
-  
+export default function Home({ products, dataSet }) {
+  // console.log(process.env.GOOGLE_ID)
+
   return (
     <div className="bg-gray-100 font-sans">
       <Head>
@@ -19,7 +20,7 @@ export default function Home({ products }) {
       <Header products={products} />
       <main className="max-h-screen-1xl mx-auto max-w-screen-2xl">
         <Banner />
-        <ProductFeed products={products} />
+        <ProductFeed products={dataSet} />
       </main>
       <Footer />
     </div>
@@ -30,11 +31,14 @@ export default function Home({ products }) {
 export async function getServerSideProps(context) {
   const session = await getSession(context)
   const products = await fetch(API_GET_DATA_URL).then((res) => res.json())
+  const data = [books_data]
+  const dataSet = [...data[0].slice(0, 1), ...data[0].slice(2)]
+
   return {
     props: {
       products,
       session,
+      dataSet,
     },
-    
   }
 }

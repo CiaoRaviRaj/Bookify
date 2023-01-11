@@ -14,7 +14,7 @@ function Footer() {
               <li className="link">About Us</li>
               <li className="link">Careers</li>
               <li className="link">Press Release</li>
-              <li className="link">Amazon Cares</li>
+              <li className="link">Bookify Cares</li>
               <li className="link">Gift a Smile</li>
             </ul>
           </div>
@@ -30,39 +30,43 @@ function Footer() {
           <div className="hidden lg:flex lg:flex-col">
             <h1 className="mb-2 text-xl font-bold">MAKE MONEY WITH US</h1>
             <ul className="font-semibold">
-              <li className="link">Sell On Amazon</li>
-              <li className="link">Amazon Global Selling</li>
+              <li className="link">Sell On Bookify</li>
+              <li className="link">Bookify Global Selling</li>
               <li className="link">Become an Affiliate</li>
-              <li className="link">Fulfilment by Amazon</li>
+              <li className="link">Fulfilment by Bookify</li>
               <li className="link">Advertise Your Products</li>
-              <li className="link">Amazon Pay on Merchants</li>
+              <li className="link">Bookify Pay on Merchants</li>
             </ul>
           </div>
           <div>
             <h1 className="mb-2 text-xl font-bold ">LET US HELP YOU</h1>
             <ul className="font-semibold">
-              <li className="link">COVID-19 and Amazon</li>
               <li className="link">Your Account</li>
               <li className="link">Returns Center</li>
               <li className="link">100% Purchase Protection</li>
               <li className="link">Help</li>
-              <li className="link">Amazon App Download</li>
+              <li className="link">Bookify App Download</li>
             </ul>
           </div>
         </div>
       </div>
       <div
         onClick={() => router.push('/')}
-        className="flex flex-grow justify-evenly border-t border-gray-600 bg-amazon_blue pt-4 font-semibold text-white"
+        className="flex flex-grow items-center justify-evenly border-t border-gray-600 bg-amazon_blue pt-4 font-semibold text-white"
       >
-        <Image
-          src="/amazon.png"
-          alt="Amazon"
-          width={140}
-          height={30}
-          objectFit="contain"
-          className="cursor-pointer"
-        />
+        <div className="flex items-center rounded-xl bg-gray-100 p-2 shadow-xl">
+          <Image
+            src="/logo.png"
+            alt="Amazon"
+            width={140}
+            height={30}
+            objectFit="cover"
+            className="flex-shrink cursor-pointer"
+          />
+          <span className="flex-grow  text-2xl font-bold text-black">
+            Bookify
+          </span>
+        </div>
 
         <h1 className="-mt-1 text-xl md:text-2xl">© CiaoRaviRaj</h1>
       </div>

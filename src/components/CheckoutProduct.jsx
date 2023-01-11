@@ -1,7 +1,7 @@
 import 'react-toastify/dist/ReactToastify.css'
 import { TrashIcon } from '@heroicons/react/outline'
 import { StarIcon, MinusSmIcon, PlusIcon } from '@heroicons/react/solid'
-import Image from 'next/image'
+
 import Currency from 'react-currency-formatter'
 import { useDispatch } from 'react-redux'
 import { toast, ToastContainer } from 'react-toastify'
@@ -114,7 +114,7 @@ function CheckoutProduct({
       />
       <div className="border-b py-4">
         <div className="grid grid-cols-5 ">
-          <Image
+          <img
             src={image}
             alt={title}
             width={200}

@@ -8,7 +8,7 @@ import CheckoutProduct from '../components/CheckoutProduct'
 import { selectItems, selectTotal } from '../slices/basketSlice'
 import Currency from 'react-currency-formatter'
 import { useSession } from 'next-auth/react'
-import { groupBy } from 'lodash'
+import { groupBy, method } from 'lodash'
 import { TransitionGroup } from 'react-transition-group'
 import { CSSTransition } from 'react-transition-group'
 import { loadStripe } from '@stripe/stripe-js'
@@ -25,16 +25,27 @@ function Checkout() {
   const createCheckoutSession = async () => {
     const stripe = await stripePromise
 
-    const checkoutSession = await axios.post(
-      'http://localhost:3000/api/create-checkout-session',
-      {
+    // Call the Backend to create a checkout session
+
+    // const checkoutSession = await axios.post(
+    //   'http://localhost:3000/api/create-checkout-session',
+    //   {
+    //     items,
+    //     email: session.user.email,
+    //   }
+    // )
+
+    const checkoutTest = await axios({
+      method: 'post',
+      url: '/api/create-checkout-session',
+      data: {
         items,
         email: session.user.email,
-      }
-    )
-    //Redirect user to stripe checkout
+      },
+    })
+    // Redirect user to stripe checkout
     const result = await stripe.redirectToCheckout({
-      sessionId: checkoutSession.data.id,
+      sessionId: checkoutTest.data.id,
     })
     if (result.error) {
       alert(result.error.message)

@@ -27,7 +27,7 @@ function Navbar() {
               onClick={showSidebar}
             >
               <MenuIcon className="h-6 mr-1" />
-              <h3 className=" font-semibold text-lg">All</h3>
+              <span className=" font-semibold text-lg">All</span>
             </p>
         </a>
       </div>

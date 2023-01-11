@@ -60,20 +60,22 @@ function Product({ id, title, price, description, category, image }) {
     <Fade bottom>
       <div className="relative z-40 mx-5 my-3 flex h-[96%] flex-col rounded-2xl border-none bg-white p-10 shadow-sm transition-all duration-150 ease-out hover:scale-105 hover:ease-in">
         {/* Category */}
-        <p className="absolute top-2 right-3 text-base capitalize italic text-gray-400">
-          {category}
+        <p className="absolute top-2 right-3 flex text-base space-x-2 capitalize italic text-gray-400">
+          {category.map((item => {
+            return <div className=''>{item}</div>
+          }))}
         </p>
         <div className="relative my-2 rounded-lg text-center transition-all duration-150 ease-out hover:scale-105 hover:opacity-100 hover:ease-in">
-          <Image
+          <img
             src={image}
             alt={title}
             height={200}
             width={200}
             objectFit="contain"
-            className="cursor-pointer overflow-hidden rounded-lg  transition-all duration-150 ease-out hover:ease-in "
+            className="cursor-pointer mx-auto overflow-hidden rounded-lg  transition-all duration-150 ease-out hover:ease-in "
             loading="lazy"
           />
-          <div
+          {/*<div
             // onClick={() => setShowQuick(true)}
             className="absolute top-0 left-0 z-10 flex h-full  w-full cursor-pointer items-center justify-center rounded-lg bg-gray-500 opacity-0 transition-all duration-150 ease-out hover:scale-105 hover:bg-opacity-50 hover:opacity-100 hover:ease-in"
           >
@@ -83,7 +85,7 @@ function Product({ id, title, price, description, category, image }) {
               </span>
               <EyeIcon className="h-6" />
             </div>
-          </div>
+        </div> */}
         </div>
         {/* Title */}
         <Link href={`/product/${id}`}>

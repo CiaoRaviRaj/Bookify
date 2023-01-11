@@ -12,7 +12,7 @@ import {
 import { useSelector } from 'react-redux'
 import Navbar from './Navbar'
 import { useRouter } from 'next/router'
-import { signIn, useSession } from 'next-auth/react'
+import { signIn, useSession, signOut } from 'next-auth/react'
 import { selectItems } from '../slices/basketSlice'
 
 function Header({ products }) {
@@ -41,20 +41,23 @@ function Header({ products }) {
         {/* Logo */}
         <div
           onClick={() => router.push('/')}
-          className=" flex-shrink-1 mt-2 flex w-28 items-center xs:w-32"
+          className=" flex-shrink-1 bg-amazon_blue-100 mt-2 mr-2 flex w-28 cursor-pointer items-center space-x-2 rounded-lg bg-white px-1 shadow-sm xs:w-32"
         >
           <Image
-            src="/amazon.png"
+            src="/logo.png"
             alt="Amazon"
             width={150}
-            height={40}
-            objectFit="contain"
-            className="cursor-pointer"
+            height={80}
+            objectFit="cover"
+            className=" rounded-full"
           />
+          <span className="glow-2  shadow-3 text-lg font-bold text-black">
+            Bookify
+          </span>
         </div>
 
         {/* Search Bar */}
-        <div className=" relative flex h-10 flex-grow cursor-pointer items-center rounded-lg bg-yellow-400 hover:bg-yellow-500">
+        <div className=" relative flex h-10 flex-grow cursor-pointer items-center rounded-lg bg-blue-400 hover:bg-blue-500">
           <input
             onMouseEnter={() => setShowResults(true)}
             onBlur={() => setShowResults(false)}
@@ -139,10 +142,10 @@ function Header({ products }) {
           <Navbar />
         </div>
         <p className="link">Prime Video</p>
-        <p className="link">Amazon Business</p>
+        <p className="link">Bookify Business</p>
         <p className="link">Today&#39;s Deals</p>
-        <p className="link hidden lg:inline-flex">Electronics</p>
-        <p className="link hidden lg:inline-flex">Food & Grocery</p>
+        <p className="link hidden lg:inline-flex">Fictions</p>
+        <p className="link hidden lg:inline-flex">Love & comedy</p>
         <p className="link hidden lg:inline-flex">Prime</p>
         <p className="link hidden lg:inline-flex">Buy Again</p>
         <p className="link hidden lg:inline-flex">Shoppers Toolkit</p>

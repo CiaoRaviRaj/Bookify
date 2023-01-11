@@ -24,7 +24,7 @@ function orders({ orders }) {
         )}
 
         <div className="mt-5 space-y-4">
-          {orders?.map(
+          { orders.map(
             ({ id, amount, amountShipping, items, timestamp, images }) => (
               <Order
                 key={id}
@@ -46,7 +46,7 @@ function orders({ orders }) {
 export default orders
 
 export async function getServerSideProps(context) {
-  const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
+  const stripe = require('stripe')(process.env.stipe_secret_key)
 
   // Get the users logged in credentials..
   const session = await getSession(context)

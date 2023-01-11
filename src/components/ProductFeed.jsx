@@ -19,17 +19,30 @@ function ProductFeed({ products }) {
         {/* z-30 relative max-w-screen-2xl mx-auto   */}
         {products
           .slice(0, 4)
-          .map(({ id, title, price, description, category, image }) => (
-            <Product
-              key={id}
-              id={id}
-              title={title}
-              price={price}
-              description={description}
-              category={category}
-              image={image}
-            />
-          ))}
+          .map(
+            ({
+              id,
+              title,
+              pageCount,
+              longDescription,
+              categories,
+              thumbnailUrl,
+            }) => (
+              <Product
+                key={id}
+                id={id}
+                title={title}
+                price={pageCount ? pageCount : Math.floor(Math.random() * 200) }
+                description={
+                  longDescription
+                    ? longDescription
+                    : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+                }
+                category={categories}
+                image={thumbnailUrl}
+              />
+            )
+          )}
 
         <img
           className="my-2 md:col-span-full"
@@ -40,32 +53,58 @@ function ProductFeed({ products }) {
         <div className="md:col-span-2">
           {products
             .slice(4, 5)
-            .map(({ id, title, price, description, category, image }) => (
-              <Product
-                key={id}
-                id={id}
-                title={title}
-                price={price}
-                description={description}
-                category={category}
-                image={image}
-              />
-            ))}
+            .map(
+              ({
+                id,
+                title,
+                pageCount,
+                longDescription,
+                categories,
+                thumbnailUrl,
+              }) => (
+                <Product
+                  key={id}
+                  id={id}
+                  title={title}
+                  price={pageCount}
+                  description={
+                    longDescription
+                      ? longDescription
+                      : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+                  }
+                  category={categories}
+                  image={thumbnailUrl}
+                />
+              )
+            )}
         </div>
 
         {products
-          .slice(5, products.length)
-          .map(({ id, title, price, description, category, image }) => (
-            <Product
-              key={id}
-              id={id}
-              title={title}
-              price={price}
-              description={description}
-              category={category}
-              image={image}
-            />
-          ))}
+          .slice(5, 40)
+          .map(
+            ({
+              _id,
+              title,
+              pageCount,
+              longDescription,
+              categories,
+              thumbnailUrl,
+            }) => (
+              <Product
+                key={_id}
+                id={_id}
+                title={title}
+                price={pageCount}
+                description={
+                  longDescription
+                    ? longDescription
+                    : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged."
+                }
+                category={categories}
+                image={thumbnailUrl}
+              />
+            )
+          )}
       </div>
     </>
   )

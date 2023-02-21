@@ -20,19 +20,22 @@ function ProductFeed({ products }) {
         {products
           .slice(0, 4)
           .map(
-            ({
-              id,
-              title,
-              pageCount,
-              longDescription,
-              categories,
-              thumbnailUrl,
-            }) => (
+            (
+              {
+                id,
+                title,
+                pageCount,
+                longDescription,
+                categories,
+                thumbnailUrl,
+              },
+              index
+            ) => (
               <Product
-                key={id}
+                key={index}
                 id={id}
                 title={title}
-                price={pageCount ? pageCount : Math.floor(Math.random() * 200) }
+                price={pageCount ? pageCount : Math.floor(Math.random() * 200)}
                 description={
                   longDescription
                     ? longDescription

@@ -1,14 +1,24 @@
+import {
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  orderBy,
+  query,
+  setDoc,
+} from 'firebase/firestore'
 import moment from 'moment/moment'
 import { getSession, useSession } from 'next-auth/react'
 import React from 'react'
 import db from '../../firebase'
+
 import Header from '../components/Header'
 import Order from '../components/Order'
 
-function orders({ orders }) {
+function orders({ data1 }) {
   const { data: session } = useSession()
+  const orders = JSON.parse(data1)
   console.log(orders)
-
   return (
     <div>
       <Header />
@@ -23,21 +33,23 @@ function orders({ orders }) {
           <h2>Please sign up to see your order</h2>
         )}
 
-        <div className="mt-5 space-y-4">
-          { orders.map(
-            ({ id, amount, amountShipping, items, timestamp, images }) => (
-              <Order
-                key={id}
-                id={id}
-                amount={amount}
-                amountShipping={amountShipping}
-                items={items}
-                timestamp={timestamp}
-                images={images}
-              />
-            )
-          )}
-        </div>
+        {
+          <div className="mt-5 space-y-4">
+            {orders.map(
+              ({ id, amount, amountShipping, items, timestamp, images }) => (
+                <Order
+                  key={id}
+                  id={id}
+                  amount={amount}
+                  amountShipping={amountShipping}
+                  items={items}
+                  timestamp={timestamp}
+                  images={images}
+                />
+              )
+            )}
+          </div>
+        }
       </main>
     </div>
   )
@@ -56,32 +68,63 @@ export async function getServerSideProps(context) {
       props: {},
     }
   }
-  //   const stripeOrders = await db
-  //     .collection('users')
-  //     .doc(session.user.email)
-  //     .collection('orders')
-  //     .orderBy('timestamp', 'desc')
-  //     .get()
-  const stripeOrders = {
-    docs: [],
-  }
+  // const stripeOrders = await db
+  //   .collection('users')
+  //   .doc(session.user.email)
+  //   .collection('orders')
+  //   .orderBy('timestamp', 'desc')
+  //   .get()
+  // const data = await setDoc(doc(db, 'users', "test"),{
+  //   name: "fffff"
+  // })
+
+  // const data2 = await setDoc(doc(db, 'users', 'test2'), {
+  //   name: 'ddddd',
+  // })
+  let data = []
+  const dataSnap = await getDocs(
+    query(
+      collection(db, 'users', `${session.user.email}`, 'orders'),
+      orderBy('timestamp', 'desc')
+    )
+  )
+  dataSnap.forEach((doc) => {
+    data.push({
+      ...doc.data(),
+      timestamp: doc.data().timestamp.toDate(),
+    })
+  })
+
+  // const stripeOrders = {
+  //   docs: [],
+  // }
+
+  // stripe.checkout.sessions.listLineItems(
+  //   data[0].id,
+  //   { limit: 5 },
+  //   function (err, lineItems) {
+  //     if (err) {
+  //       console.log(err)
+  //     }
+  //     console.log(lineItems)
+  //   }
+  // )
 
   // Stripe order
   const orders = await Promise.all(
-    stripeOrders.docs.map(async (order) => ({
+    data.map(async (order) => ({
       id: order.id,
-      amount: order.data().amount,
-      amountShipping: order.data().amount_shipping,
-      images: order.data().images,
-      timestamp: moment(order.data().timestamp.toData()).unix(),
-      items: await stripe.checkout.sessions.listLineItems(order, id, {
-        limit: 100,
-      }).data,
+      amount: order.amount,
+      amountShipping: order.amount_shipping,
+      images: order.images,
+      timestamp: moment(order.timestamp).unix(),
+      items: (await stripe.checkout.sessions.listLineItems(order.id)).data,
     }))
   )
+
   return {
     props: {
-      orders,
+      data1: JSON.stringify(orders),
     },
   }
 }

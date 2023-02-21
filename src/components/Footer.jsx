@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 function Footer() {
-  const router = useRouter
+  const router = useRouter()
   return (
     <div className="static bottom-0 w-full overflow-hidden">
       <div className="bg-amazon_blue-light md:px-5 lg:px-10">

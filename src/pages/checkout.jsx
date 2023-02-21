@@ -53,6 +53,7 @@ function Checkout() {
   }
 
   const groupItems = Object.values(groupBy(items, 'id'))
+
   return (
     <div className="bg-gray-100">
       <Header />

@@ -97,3 +97,16 @@
   transform: translateX(3);
   transition: all 400ms ease-out;
 }
+
+.input {
+  border-radius: 5px;
+  flex: 1;
+  padding: 5px;
+  border: 2px solid #059af6c9;
+}
+
+.cancel_button {
+  background: linear-gradient( red , rgb(161, 12, 12));
+  padding: 5px 10px;
+  border-radius: 5px;
+}

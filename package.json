@@ -35,7 +35,9 @@
     "react-router-dom": "^6.3.0",
     "react-toastify": "^9.0.1",
     "react-transition-group": "^4.4.2",
-    "stripe": "^9.1.0"
+    "react-uploader": "^3.7.1",
+    "stripe": "^9.1.0",
+    "uploader": "^3.6.1"
   },
   "devDependencies": {
     "@types/node": "17.0.4",

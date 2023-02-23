@@ -141,8 +141,12 @@ function Header({ products }) {
         <div>
           <Navbar />
         </div>
-        <p className="link">Prime Video</p>
-        <p className="link">Bookify Business</p>
+        <p className="link" onClick={() => router.push('/referbished_books')}>
+          Referbished Books
+        </p>
+        <p className="link" onClick={() => router.push('/u2u')}>
+          Bookify U2U Sell
+        </p>
         <p className="link">Today&#39;s Deals</p>
         <p className="link hidden lg:inline-flex">Fictions</p>
         <p className="link hidden lg:inline-flex">Love & comedy</p>

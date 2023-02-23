@@ -28,7 +28,7 @@ function orders({ data1 }) {
         </h1>
 
         {session ? (
-          <h2>x Orders</h2>
+          <h2>{orders.length} Orders</h2>
         ) : (
           <h2>Please sign up to see your order</h2>
         )}
@@ -68,19 +68,7 @@ export async function getServerSideProps(context) {
       props: {},
     }
   }
-  // const stripeOrders = await db
-  //   .collection('users')
-  //   .doc(session.user.email)
-  //   .collection('orders')
-  //   .orderBy('timestamp', 'desc')
-  //   .get()
-  // const data = await setDoc(doc(db, 'users', "test"),{
-  //   name: "fffff"
-  // })
-
-  // const data2 = await setDoc(doc(db, 'users', 'test2'), {
-  //   name: 'ddddd',
-  // })
+  
   let data = []
   const dataSnap = await getDocs(
     query(

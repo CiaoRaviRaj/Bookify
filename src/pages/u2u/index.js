@@ -1,5 +1,12 @@
 import axios from 'axios'
-import { collection, getDocs, limit, orderBy, query } from 'firebase/firestore'
+import {
+  collection,
+  getDocs,
+  limit,
+  orderBy,
+  query,
+  where,
+} from 'firebase/firestore'
 import React from 'react'
 import db from '../../../firebase'
 import Header from '../../components/Header'
@@ -22,6 +29,7 @@ export async function getServerSideProps(ctx) {
   const querySnapshot = await getDocs(
     query(
       collection(db, 'u2uDatabase'),
+      where('sellStatus', '==', false),
       orderBy('timestamp', 'desc'),
       limit(50)
     )

@@ -33,6 +33,7 @@ export default function U2uAdd() {
       ...values,
       ownerEmail: session.user.email,
       ownerName: session.user.name,
+      sellStatus: false,
       timestamp: serverTimestamp(),
     }
     const docRef = await addDoc(collection(db, 'u2uDatabase'), data)

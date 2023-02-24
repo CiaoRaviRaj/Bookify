@@ -7,13 +7,16 @@ export default function U2uFeed({ data }) {
 
   return (
     <div className=" py-2">
-      <button
-        onClick={() => router.push('/u2u/add')}
-        type="button"
-        className="button float-right mr-2 mb-20 rounded-md"
-      >
-        Sell Your Book
-      </button>
+      <div className="mr-2 mb-20">
+        <button
+          onClick={() => router.push('/u2u/add')}
+          type="button"
+          className="button float-right rounded-md"
+        >
+          Sell Your Book
+        </button>
+      </div>
+
       <div className="relative z-30 mx-auto grid max-w-screen-2xl grid-flow-row-dense rounded-md border-none shadow-md md:mt-[50px] md:grid-cols-2 lg:mt-[60px] lg:grid-cols-3 xl:grid-cols-4">
         {data.map(
           ({

@@ -120,6 +120,7 @@ function CheckoutProduct({
             width={200}
             height={200}
             objectFit="contain"
+            className=" aspect-square "
           />
           {/* Middle */}
           <div className="col-span-4 mx-5 sm:col-span-3">
@@ -133,11 +134,11 @@ function CheckoutProduct({
             </div>
             <p className="my-2 text-xs line-clamp-3">{description}</p>
             <a className="text-xl font-bold text-gray-800">{quantity}</a> x{' '}
-            <a className="text-xl mr-[2px] font-bold text-gray-800">
+            <a className="mr-[2px] text-xl font-bold text-gray-800">
               <Currency quantity={price} currency="INR" />
             </a>
             =
-            <span className="text-xl ml-[2px] font-bold text-gray-800">
+            <span className="ml-[2px] text-xl font-bold text-gray-800">
               <Currency quantity={total} currency="INR" />
             </span>
           </div>

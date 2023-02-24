@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { useState } from 'react'
 import { StarIcon } from '@heroicons/react/solid'
+import { Carousel } from 'react-responsive-carousel'
 import Currency from 'react-currency-formatter'
 import Link from 'next/link'
 import Fade from 'react-reveal/Fade'
@@ -11,11 +12,19 @@ import { toast } from 'react-toastify'
 import { addToBasket } from '../../../slices/basketSlice'
 import { PRIME_IMAGE_URL } from '../../../constants/commonConstants'
 
-
 const MAX_RATING = 5
 const MIN_RATING = 1
 
-function U2uCard({ id, title, price, description, category, image, address }) {
+function U2uCard({
+  id,
+  title,
+  price,
+  description,
+  category,
+  image,
+  address,
+  images,
+}) {
   const [rating] = useState(
     Math.floor(Math.random() * (MAX_RATING - MIN_RATING + 1)) + MIN_RATING
   )
@@ -32,6 +41,7 @@ function U2uCard({ id, title, price, description, category, image, address }) {
       description,
       category,
       image,
+      images,
     }
     //sends product as an action to the REDUX store
     dispatch(addToBasket({ ...product }))
@@ -71,14 +81,30 @@ function U2uCard({ id, title, price, description, category, image, address }) {
         </p>
         <div className="relative my-2 rounded-lg text-center transition-all duration-150 ease-out hover:scale-105 hover:opacity-100 hover:ease-in">
           <div className="z-20 h-full w-full bg-gradient-to-t from-gray-100 to-transparent">
-            {image.map((item, index) => (
-              <img
-                key={index}
-                src={item}
-                loading="lazy"
-                alt={`title ${index}`}
-              />
-            ))}
+            <Carousel
+              showArrows={true}
+              showStatus={false}
+              autoPlay
+              infiniteLoop
+              stopOnHover={false}
+              emulateTouch={false}
+              autoFocus={false}
+              showIndicators={false}
+              showThumbs={false}
+              interval={4000}
+            >
+              {images.map((item, index) => (
+                <div className="">
+                  <img
+                    key={index}
+                    src={item}
+                    loading="lazy"
+                    alt={`title ${index}`}
+                    className="aspect-square"
+                  />
+                </div>
+              ))}
+            </Carousel>
           </div>
 
           {/* <div

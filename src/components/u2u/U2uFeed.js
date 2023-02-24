@@ -34,7 +34,8 @@ export default function U2uFeed({ data }) {
               description={description}
               address={`${address} city: ${city} pin code: ${pin_code}`}
               category={category}
-              image={images}
+              image={images[0]}
+              images={images}
             />
           )
         )}

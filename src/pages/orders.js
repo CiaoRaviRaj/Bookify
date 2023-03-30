@@ -59,12 +59,11 @@ function orders({ data1, login }) {
 
 export default orders
 
-export async function getServerSideProps(context) {
+export async function getServerSideProps(ctx) {
   const stripe = require('stripe')(process.env.stipe_secret_key)
 
   // Get the users logged in credentials..
-  const session = await getSession(context)
-  console.log(context)
+  const session = await getSession(ctx)
   // console.log('sesionjhjhjhjhjhjhjhj', context.req.cookies)
 
   // if (!session) {
@@ -86,21 +85,6 @@ export async function getServerSideProps(context) {
       timestamp: doc.data().timestamp.toDate(),
     })
   })
-
-  // const stripeOrders = {
-  //   docs: [],
-  // }
-
-  // stripe.checkout.sessions.listLineItems(
-  //   data[0].id,
-  //   { limit: 5 },
-  //   function (err, lineItems) {
-  //     if (err) {
-  //       console.log(err)
-  //     }
-  //     console.log(lineItems)
-  //   }
-  // )
 
   // Stripe order
   const orders = await Promise.all(

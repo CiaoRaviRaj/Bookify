@@ -19,7 +19,6 @@ function orders({ data1 }) {
   const { data: session } = useSession()
   const orders = data1 //JSON.parse(data1)
   console.log(orders)
-  console.log(orders)
   return (
     <div>
       <Header />
@@ -63,6 +62,7 @@ export async function getServerSideProps(context) {
 
   // Get the users logged in credentials..
   const session = await getSession(context)
+  console.log(session)
 
   if (!session) {
     return {
@@ -83,6 +83,8 @@ export async function getServerSideProps(context) {
       timestamp: doc.data().timestamp.toDate(),
     })
   })
+
+  console.log(session)
 
   // const stripeOrders = {
   //   docs: [],
@@ -110,6 +112,7 @@ export async function getServerSideProps(context) {
       items: (await stripe.checkout.sessions.listLineItems(order.id)).data,
     }))
   )
+  console.log(orders)
 
 
   return {

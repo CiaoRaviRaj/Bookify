@@ -19,6 +19,7 @@ function orders({ data1 }) {
   const { data: session } = useSession()
   const orders = data1 //JSON.parse(data1)
   console.log(orders)
+  console.log(session)
   return (
     <div>
       <Header />

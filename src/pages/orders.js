@@ -15,10 +15,12 @@ import db from '../../firebase'
 import Header from '../components/Header'
 import Order from '../components/Order'
 
-function orders({ data1 }) {
+function orders({ data1, data, session }) {
   const { data: session } = useSession()
   const orders = data1 //JSON.parse(data1)
   console.log(orders)
+  console.log(data)
+  console.log(session)
   return (
     <div>
       <Header />
@@ -84,7 +86,6 @@ export async function getServerSideProps(context) {
     })
   })
 
-  console.log(session)
 
   // const stripeOrders = {
   //   docs: [],
@@ -118,6 +119,8 @@ export async function getServerSideProps(context) {
   return {
     props: {
       data1: orders,
+      session: session,
+      data
     },
   }
 }

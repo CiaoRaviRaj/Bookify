@@ -64,18 +64,18 @@ export async function getServerSideProps(context) {
 
   // Get the users logged in credentials..
   const session = await getSession(context)
-  console.log("sesion",session);
+  // console.log('sesionjhjhjhjhjhjhjhj', context.req.cookies)
 
-  if (!session) {
-    return {
-      props: {},
-    }
-  }
+  // if (!session) {
+  //   return {
+  //     props: {},
+  //   }
+  // }
 
   let data = []
   const dataSnap = await getDocs(
     query(
-      collection(db, 'users', `${session.user.email}`, 'orders'),
+      collection(db, 'users', `rj12sept@gmail.com`, 'orders'),
       orderBy('timestamp', 'desc')
     )
   )

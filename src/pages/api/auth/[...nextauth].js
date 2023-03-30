@@ -13,8 +13,8 @@ export default NextAuth({
       clientSecret: process.env.GITHUB_SECRET,
     }),
   ],
-  pages: {
-    signIn: '/signin',
-  },
+  // pages: {
+  //   signIn: '/signin',
+  // },
   secret: process.env.NEXTAUTH_SECRET,
 })

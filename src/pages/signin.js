@@ -61,6 +61,7 @@ export async function getServerSideProps(context) {
       redirect: { destination: '/' },
     }
   }
+
   const providers = await getProviders()
   return {
     props: { providers },

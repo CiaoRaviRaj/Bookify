@@ -102,7 +102,7 @@ function Header({ products }) {
               ) : (
                 <div
                   className="-mr-2 flex items-center space-x-1 rounded-md border border-none p-1 text-center no-underline transition duration-150 ease-out hover:bg-gray-200 hover:text-amazon_blue hover:ease-in "
-                  onClick={() => router.push('/signin')}
+                  onClick={() => signIn()}
                 >
                   <LoginIcon className="text-md h-8" />
                   <a className="text-lg font-semibold no-underline">Sign In</a>

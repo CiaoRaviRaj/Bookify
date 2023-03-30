@@ -17,7 +17,8 @@ import Order from '../components/Order'
 
 function orders({ data1 }) {
   const { data: session } = useSession()
-  const orders = JSON.parse(data1)
+  const orders = data1 //JSON.parse(data1)
+  console.log(orders)
   console.log(orders)
   return (
     <div>
@@ -110,9 +111,10 @@ export async function getServerSideProps(context) {
     }))
   )
 
+
   return {
     props: {
-      data1: JSON.stringify(orders),
+      data1: orders,
     },
   }
 }

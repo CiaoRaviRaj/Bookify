@@ -32,6 +32,7 @@ export default function SignIn({ providers }) {
           </p>
           {Object.values(providers).map((provider) => (
             <div key={provider.name}>
+              {console.log(provider)}
               <button
                 onClick={() => signIn(provider.id)}
                 className="link mx-auto my-4 flex w-3/4 items-center justify-evenly rounded-2xl bg-green-600 p-4 text-lg font-semibold text-white shadow-md hover:border-none md:text-xl"

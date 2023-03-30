@@ -13,5 +13,7 @@ module.exports = {
     NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
     NEXTAUTH_URL: process.env.NEXTAUTH_URL,
     HOST: process.env.HOST,
+    GITHUB_CLIENT_KEY: process.env.GITHUB_CLIENT_KEY,
+    GITHUB_SECRET_KEY: process.env.GITHUB_SECRET_KEY,
   },
 }

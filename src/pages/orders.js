@@ -64,6 +64,7 @@ export async function getServerSideProps(context) {
 
   // Get the users logged in credentials..
   const session = await getSession(context)
+  console.log("sesion",session);
 
   if (!session) {
     return {

@@ -30,14 +30,14 @@ function orders({ data1, data, sessions }) {
         </h1>
 
         {session ? (
-          <h2>{orders.length} Orders</h2>
+          <h2>{orders?.length} Orders</h2>
         ) : (
           <h2>Please sign up to see your order</h2>
         )}
 
         {
           <div className="mt-5 space-y-4">
-            {orders.map(
+            {orders?.map(
               ({ id, amount, amountShipping, items, timestamp, images }) => (
                 <Order
                   key={id}
@@ -85,6 +85,7 @@ export async function getServerSideProps(context) {
       timestamp: doc.data().timestamp.toDate(),
     })
   })
+  console.log(dataSnap)
 
 
   // const stripeOrders = {

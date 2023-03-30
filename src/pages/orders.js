@@ -119,8 +119,8 @@ export async function getServerSideProps(context) {
   return {
     props: {
       data1: orders,
-      sessions : session,
-      data
+      sessions: session,
+      data: dataSnap,
     },
   }
 }

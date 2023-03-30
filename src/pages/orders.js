@@ -20,6 +20,7 @@ function orders({ data1, login }) {
   const orders = data1 //JSON.parse(data1)
   console.log(orders)
   console.log(login)
+  console.log(session)
   return (
     <div>
       <Header />

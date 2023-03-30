@@ -15,12 +15,10 @@ import db from '../../firebase'
 import Header from '../components/Header'
 import Order from '../components/Order'
 
-function orders({ data1, data, sessions }) {
+function orders({ data1 }) {
   const { data: session } = useSession()
   const orders = data1 //JSON.parse(data1)
   console.log(orders)
-  console.log(data)
-  console.log(sessions)
   return (
     <div>
       <Header />
@@ -64,14 +62,13 @@ export async function getServerSideProps(context) {
 
   // Get the users logged in credentials..
   const session = await getSession(context)
-  console.log(session)
 
   if (!session) {
     return {
       props: {},
     }
   }
-  
+
   let data = []
   const dataSnap = await getDocs(
     query(
@@ -85,8 +82,6 @@ export async function getServerSideProps(context) {
       timestamp: doc.data().timestamp.toDate(),
     })
   })
-  console.log(dataSnap)
-
 
   // const stripeOrders = {
   //   docs: [],
@@ -114,14 +109,10 @@ export async function getServerSideProps(context) {
       items: (await stripe.checkout.sessions.listLineItems(order.id)).data,
     }))
   )
-  console.log(orders)
-
 
   return {
     props: {
       data1: orders,
-      sessions: session,
-      data: dataSnap,
     },
   }
 }

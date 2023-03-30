@@ -1,4 +1,4 @@
-# Amazon Clone 2.0
+# Bookify 2.0
 
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue?cacheSeconds=2592000" />
@@ -70,10 +70,10 @@ HOST=http://localhost:3000
 
 ## Author
 
-👤 **Divyam Agarwal**
+👤 **Ravi Raj**
 
 - Website: [https://divyamag.vercel.app/](https://divyamag.vercel.app/)
-- Github: [@Divyam2600](https://github.com/Divyam2600)
+- Github: [@CiaoRaviRaj](https://github.com/CiaoRaviRaj)
 
 ## Show your support
 

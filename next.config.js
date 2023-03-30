@@ -10,5 +10,8 @@ module.exports = {
     stipe_public_key: process.env.STRIPE_PUBLIC_KEY,
     stipe_secret_key: process.env.STRIPE_SECRET_KEY,
     uplaod_js_public_key: process.env.UPLOAD_JS_PUBLIC_KEY,
+    NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
+    NEXTAUTH_URL: process.env.NEXTAUTH_URL,
+    HOST: process.env.HOST,
   },
 }

@@ -15,12 +15,9 @@ import db from '../../firebase'
 import Header from '../components/Header'
 import Order from '../components/Order'
 
-function orders({ data1, login }) {
+function orders({ data1 }) {
   const { data: session } = useSession()
   const orders = data1 //JSON.parse(data1)
-  console.log(orders)
-  console.log(login)
-  console.log(session)
   return (
     <div>
       <Header />
@@ -64,7 +61,6 @@ export async function getServerSideProps(ctx) {
 
   // Get the users logged in credentials..
   const session = await getSession(ctx)
-  // console.log('sesionjhjhjhjhjhjhjhj', context.req.cookies)
 
   // if (!session) {
   //   return {
@@ -75,7 +71,7 @@ export async function getServerSideProps(ctx) {
   let data = []
   const dataSnap = await getDocs(
     query(
-      collection(db, 'users', `rj12sept@gmail.com`, 'orders'),
+      collection(db, 'users', `${session.user.email}`, 'orders'),
       orderBy('timestamp', 'desc')
     )
   )
@@ -101,7 +97,6 @@ export async function getServerSideProps(ctx) {
   return {
     props: {
       data1: orders,
-      login: session,
     },
   }
 }

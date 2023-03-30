@@ -10,8 +10,8 @@ export default NextAuth({
       clientSecret: process.env.google_secret,
     }),
   ],
-  pages: {
-    signIn: '/signin',
-  },
+  // pages: {
+  //   signIn: '/signin',
+  // },
   // secret: process.env.NEXTAUTH_SECRET,
 })

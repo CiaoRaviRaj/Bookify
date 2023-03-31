@@ -18,13 +18,13 @@ Bookify is an eCommerce website specializing in selling books. Users can browse 
 </p>
 
 <p>Home Page</p>
-<img alt="Home Page" src="https://screenrec.com/share/2uLKIYrTb3" />
+<img alt="Home Page" src="https://www.linkpicture.com/q/Screenshot-2023-03-31-at-12.40.19.png" />
 <p>Checkout Page</p>
 <img alt="Checkout Page" src="https://www.linkpicture.com/q/Screenshot-2023-03-31-at-12.20.40.png" />
 <p>Orders Page</p>
 <img alt="Orders page" src="https://www.linkpicture.com/q/Screenshot-2023-03-31-at-12.20.49_1.png" />
 <p>Footer Section<p>
-<img alt="Footer Page" src=https://screenrec.com/share/WmvFEnKgDR />
+<img alt="Footer Page" src="https://www.linkpicture.com/q/Screenshot-2023-03-31-at-12.40.37.png" />
 
 ## Next.js + Tailwind CSS
 

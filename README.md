@@ -18,13 +18,13 @@ Bookify is an eCommerce website specializing in selling books. Users can browse 
 </p>
 
 <p>Home Page</p>
-<img alt="Home Page" src="https://screenrec.com/share/2uLKIYrTb3" />
+<img alt="Home Page" src=[https://screenrec.com/share/2uLKIYrTb3] />
 <p>Checkout Page</p>
-<img alt="Checkout Page" src="https://www.linkpicture.com/view.php?img=LPic6426837873741839762975" />
+<img alt="Checkout Page" src=[https://www.linkpicture.com/view.php?img=LPic6426837873741839762975] />
 <p>Orders Page</p>
-<img alt="Orders page" src="https://www.linkpicture.com/view.php?img=LPic642683329be132109451913" />
+<img alt="Orders page" src=[https://www.linkpicture.com/view.php?img=LPic642683329be132109451913] />
 <p>Footer Section<p>
-<img alt="Footer Page" src="https://screenrec.com/share/WmvFEnKgDR" />
+<img alt="Footer Page" src=[https://screenrec.com/share/WmvFEnKgDR] />
 
 ## Next.js + Tailwind CSS
 
@@ -79,7 +79,7 @@ HOST=http://localhost:3000
 
 👤 **Ravi Raj**
 
-- Website: [https://divyamag.vercel.app/](https://divyamag.vercel.app/)
+- Website: [https://nimble-profiterole-d8660b.netlify.app/](https://divyamag.vercel.app/)
 - Github: [@CiaoRaviRaj](https://github.com/CiaoRaviRaj)
 
 ## Show your support

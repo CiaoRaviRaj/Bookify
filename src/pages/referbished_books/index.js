@@ -3,9 +3,9 @@ import Header from '../../components/Header'
 import Banner from '../../components/Banner'
 import ReferbishedBooks from '../../components/referbishedBooks/ReferbishedBooks'
 import { books_data } from '../../BooksData'
+import Footer from '../../components/Footer'
 
 export default function index({ data }) {
-  
   return (
     <div className="bg-gray-100 font-sans">
       <Header />
@@ -13,6 +13,7 @@ export default function index({ data }) {
         <Banner />
         <ReferbishedBooks data={data} />
       </main>
+      <Footer />
     </div>
   )
 }

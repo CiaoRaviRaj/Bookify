@@ -3,21 +3,28 @@
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-0.1.0-blue?cacheSeconds=2592000" />
   <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow" />
-  <img alt="Amazon Clone 2.0" src="https://img.shields.io/badge/Amazon-Clone%202.0-blue" />
-  <a href="https://clipchamp.com/watch/ix93z97k9Wb?utm_source=embed&utm_medium=embed&utm_campaign=watch">
+  <!-- <img alt="Amazon Clone 2.0" src="https://img.shields.io/badge/Amazon-Clone%202.0-blue" /> -->
+  <!-- <a href="https://clipchamp.com/watch/ix93z97k9Wb?utm_source=embed&utm_medium=embed&utm_campaign=watch">
     <img alt="Template Video" src="https://img.shields.io/badge/Template-Video-brightgreen" />
-  </a>
+  </a> -->
 </p>
 
 ### About The Build
 
-Amazon 2.0 is one which fetches products data from FakeStore Api and has Slick Animations, Eye-Catching UI, Toast notifications, Stripe Payment Integration and many more. However, the Stripe webhook passes 500 Err code(Internal Server Error) which prevented the implementation of the Order Page Logic and integration of Firebase Database.
+Bookify is an eCommerce website specializing in selling books. Users can browse new releases, bestsellers, and refurbished books at discounted prices. The website has a user-friendly interface and supports Stripe payments, ensuring secure and easy transactions. Additionally, there is a user to user sell and buy page where users can sell and exchange books. Firebase is used as the database, ensuring reliable storage of user data and product information.
 
 <p>
   Click Template Video above to view the demo of the build.
 </p>
 
-![Template Screenshot](TemplateScreenshot.png?raw=true "Template Screenshot")
+<p>Home Page</p>
+<img alt="Home Page" src="https://screenrec.com/share/2uLKIYrTb3" />
+<p>Checkout Page</p>
+<img alt="Checkout Page" src="https://www.linkpicture.com/view.php?img=LPic6426837873741839762975" />
+<p>Orders Page</p>
+<img alt="Orders page" src="https://www.linkpicture.com/view.php?img=LPic642683329be132109451913" />
+<p>Footer Section<p>
+<img alt="Footer Page" src="https://screenrec.com/share/WmvFEnKgDR" />
 
 ## Next.js + Tailwind CSS
 

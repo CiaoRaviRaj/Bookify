@@ -9,6 +9,7 @@ import {
 } from 'firebase/firestore'
 import React from 'react'
 import db from '../../../firebase'
+import Footer from '../../components/Footer'
 import Header from '../../components/Header'
 import U2uFeed from '../../components/u2u/U2uFeed'
 
@@ -19,6 +20,7 @@ export default function index({ data }) {
     <div className="bg-gray-100 font-sans">
       <Header />
       <U2uFeed data={dataSet} />
+      <Footer />
     </div>
   )
 }

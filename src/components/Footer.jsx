@@ -30,8 +30,10 @@ function Footer() {
           <div className="hidden lg:flex lg:flex-col">
             <h1 className="mb-2 text-xl font-bold">MAKE MONEY WITH US</h1>
             <ul className="font-semibold">
-              <li className="link">Sell On Bookify</li>
-              <li className="link">Bookify Global Selling</li>
+              <li className="link" onClick={() => router.push('/u2u')}>
+                Sell On Bookify
+              </li>
+              <li className="link" onClick={() => router.push('/u2u')}>Bookify Global Selling</li>
               <li className="link">Become an Affiliate</li>
               <li className="link">Fulfilment by Bookify</li>
               <li className="link">Advertise Your Products</li>
@@ -42,7 +44,7 @@ function Footer() {
             <h1 className="mb-2 text-xl font-bold ">LET US HELP YOU</h1>
             <ul className="font-semibold">
               <li className="link">Your Account</li>
-              <li className="link">Returns Center</li>
+              <li className="link" href="main">Returns Center</li>
               <li className="link">100% Purchase Protection</li>
               <li className="link">Help</li>
               <li className="link">Bookify App Download</li>

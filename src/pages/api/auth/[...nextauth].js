@@ -4,10 +4,10 @@ import GithubProvider from 'next-auth/providers/github'
 
 export default NextAuth({
   providers: [
-    GoogleProvider({
-      clientId: process.env.google_id,
-      clientSecret: process.env.google_secret,
-    }),
+    // GoogleProvider({
+    //   clientId: process.env.google_id,
+    //   clientSecret: process.env.google_secret,
+    // }),
     GithubProvider({
       clientId: process.env.GITHUB_CLIENT_KEY,
       clientSecret: process.env.GITHUB_SECRET_KEY,

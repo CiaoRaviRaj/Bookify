@@ -147,13 +147,16 @@ function Header({ products }) {
         <p className="link" onClick={() => router.push('/u2u')}>
           Bookify U2U Sell
         </p>
+
+{/*         
         <p className="link">Today&#39;s Deals</p>
         <p className="link hidden lg:inline-flex">Fictions</p>
         <p className="link hidden lg:inline-flex">Love & comedy</p>
         <p className="link hidden lg:inline-flex">Prime</p>
         <p className="link hidden lg:inline-flex">Buy Again</p>
         <p className="link hidden lg:inline-flex">Shoppers Toolkit</p>
-        <p className="link hidden lg:inline-flex">Health & Personal Care</p>
+        <p className="link hidden lg:inline-flex">Health & Personal Care</p> */}
+        
       </div>
     </header>
   )
